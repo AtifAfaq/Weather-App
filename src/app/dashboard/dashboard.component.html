@@ -17,8 +17,8 @@
                 <div class="text-center top-pad">
                     <h5>Weather Summay</h5>
                     <div>{{x.name}}</div>
-                    <div>{{(x.main.temp -273.15)| number : '1.0-1'}} C</div>
-                    <div>{{convertF(x.main.temp) | number : '1.0-1'}} F</div>
+                    <div>{{(x.main.temp -273.15)| number : '1.0-1'}} &deg;C</div>
+                    <div>{{convertF(x.main.temp) | number : '1.0-1'}} &deg;F</div>
                     <div><img src="http://openweathermap.org/img/wn/{{x.weather[0].icon}}@2x.png" /></div>
                 </div>
             </div>
