@@ -8,20 +8,18 @@
             <button class="btn btn-primary float-right">Add Location</button>
 
         </div>
-        <div class="col-md-12">
-            <hr />
-        </div>
-
+        <hr />
     </div>
     <div class="row">
 
-        <div routerLink="/detail" class="col-lg-3 col-md-4 p-3">
+        <div routerLink="/detail" *ngFor="let x of weatherObj.list" class="col-lg-3 col-md-4 p-3">
             <div class="weathercard rounded mx-3">
                 <div class="text-center top-pad">
                     <h5>Weather Summay</h5>
-                    <div>City</div>
-                    <div>Current temp</div>
-                    <div>Icon for weather</div>
+                    <div>{{x.name}}</div>
+                    <div>{{(x.main.temp -273.15)| number : '1.0-1'}} C</div>
+                    <div>{{convertF(x.main.temp) | number : '1.0-1'}} F</div>
+                    <div><img src="http://openweathermap.org/img/wn/{{x.weather[0].icon}}@2x.png" /></div>
                 </div>
             </div>
         </div>
