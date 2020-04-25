@@ -5,7 +5,8 @@
 
         </div>
         <div class="col-lg-2 col-md-2">
-            <button class="btn btn-primary float-right">Add Location</button>
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#enterModal">Add
+                Location</button>
 
         </div>
         <hr />
@@ -25,43 +26,42 @@
         </div>
 
 
-        <div routerLink="/detail" class="col-lg-3 col-md-4 p-3">
-            <div class="weathercard rounded mx-3">
-                <div class="text-center top-pad">
-                    <h5>Weather Summay</h5>
-                    <div>City</div>
-                    <div>Current temp</div>
-                    <div>Icon for weather</div>
-                </div>
+    </div>
+</div>
+
+
+<!-- ____________________________________________________ -->
+
+<div class="modal" id="enterModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+
+            <div class="modal-header">
+                <h4 class="modal-title">Enter zip code of a city</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
             </div>
-        </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
 
 
-
-        <div routerLink="/detail" class="col-lg-3 col-md-4 p-3">
-            <div class="weathercard rounded mx-3">
-                <div class="text-center top-pad">
-                    <h5>Weather Summay</h5>
-                    <div>City</div>
-                    <div>Current temp</div>
-                    <div>Icon for weather</div>
-                </div>
+                <label>Zip Code</label>
+                <input class="form-control" placeholder="Enter Zip Code" [(ngModel)]="zipCode"
+                    (keyup.enter)="Submit(zipCode)">
             </div>
-        </div>
-
-
-        <div routerLink="/detail" class="col-lg-3 col-md-4 p-3">
-            <div class="weathercard rounded mx-3">
-                <div class="text-center top-pad">
-                    <h5>Weather Summay</h5>
-                    <div>City</div>
-                    <div>Current temp</div>
-                    <div>Icon for weather</div>
-                </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">
+                    Close
+                </button>
+                <button (click)="Submit(zipCode)" type="button" class="btn btn-danger" data-dismiss="modal">
+                    Submit
+                </button>
             </div>
+
         </div>
-
-
-
     </div>
 </div>
